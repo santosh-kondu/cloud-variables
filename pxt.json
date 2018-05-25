@@ -1,0 +1,35 @@
+{
+    "name": "cloud-variables",
+    "description": "The cloud variable IoT library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "testFiles": [
+        "test.ts"
+    ],
+    "files": [
+        "cloud-variables.cpp",
+        "shims.d.ts",
+        "enums.d.ts",
+        "README.md"
+    ],
+    "public": true,
+    "yotta": {
+        "dependencies": {
+            "microbit": "lancaster-university/microbit#rest-radio",
+            "samsung-radio": "lancaster-university/rest-radio#master"
+        },
+        "config": {
+            "microbit-dal": {
+                "radio": {
+                    "version": "MICROBIT_RADIO_MODIFIED"
+                },
+                "bluetooth":{
+                    "enabled":0
+                }
+            }
+        }
+    }
+}
