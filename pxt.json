@@ -19,7 +19,7 @@
     "yotta": {
         "dependencies": {
             "microbit": "lancaster-university/microbit#rest-radio",
-            "samsung-radio": "lancaster-university/rest-radio#master"
+            "rest-radio": "lancaster-university/rest-radio#master"
         },
         "config": {
             "microbit-dal": {
