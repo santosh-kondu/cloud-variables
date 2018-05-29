@@ -38,14 +38,6 @@ declare namespace cloudvariables {
      */
     //% help=none
     //% weight=96
-    //% blockId=get_value_shared block="get|value of %variable" blockGap=8 shim=cloudvariables::getSharedVariable
-    function getSharedVariable(variableName: string): string;
-
-    /**
-     * do some stuff
-     */
-    //% help=none
-    //% weight=96
     //% blockId=on_variable_changed block="on|%variable|changed" blockGap=8 shim=cloudvariables::onVariableChanged
     function onVariableChanged(variableName: string, body: () => void): void;
 }

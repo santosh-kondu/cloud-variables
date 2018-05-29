@@ -1,16 +1,6 @@
 #include "pxt.h"
 #include "CloudVariable.h"
 
-void log_string(const char *s)
-{
-    printf("%s",s);
-}
-
-void log_num(int num)
-{
-    printf("%d",num);
-}
-
 enum class Locations{
     school = 0,
     home = 1,
@@ -28,19 +18,8 @@ enum class Locations{
 //% color=243 weight=100 icon="\uf0c2" block="Cloud Variables"
 namespace cloudvariables {
 
-    bool radioEnabled = false;
-
     int init() {
-        int r = uBit.radio.enable();
-        if (r != MICROBIT_OK) {
-            uBit.panic(43);
-            return r;
-        }
-        if (!radioEnabled) {
-            uBit.radio.setGroup(0);
-            radioEnabled = true;
-        }
-        return r;
+        return enableRadio();
     }
 
     /**
@@ -115,12 +94,7 @@ namespace cloudvariables {
         }
     }
 
-    /**
-      * do some stuff
-      */
-    //% help=none
-    //% weight=96
-    //% blockId=get_value_shared block="get|value of %variable" blockGap=8
+    //%
     StringData* getSharedVariable(StringData* variableName)
     {
         init();
@@ -149,9 +123,7 @@ namespace cloudvariables {
     //% blockId=on_variable_changed block="on|%variable|changed" blockGap=8
     void onVariableChanged(StringData* variableName, Action body)
     {
-        log_string("b4\r\n");
         uint16_t variableHash = CloudVariable::pearsonHash(ManagedString(variableName));
         registerWithDal(RADIO_CLOUD_VARIABLE_ID, variableHash, body);
-        log_string("AF\r\n");
     }
 }

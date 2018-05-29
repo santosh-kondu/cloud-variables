@@ -11,6 +11,7 @@
     ],
     "files": [
         "cloud-variables.cpp",
+        "cloud-variables.ts",
         "shims.d.ts",
         "enums.d.ts",
         "README.md"
@@ -18,7 +19,6 @@
     "public": true,
     "yotta": {
         "dependencies": {
-            "microbit": "lancaster-university/microbit#rest-radio",
             "rest-radio": "lancaster-university/rest-radio#master"
         },
         "config": {
@@ -26,10 +26,11 @@
                 "radio": {
                     "version": "MICROBIT_RADIO_MODIFIED"
                 },
-                "bluetooth":{
-                    "enabled":0
+                "bluetooth": {
+                    "enabled": 0
                 }
             }
         }
-    }
+    },
+    "installedVersion": "file:../cloud-variables"
 }
