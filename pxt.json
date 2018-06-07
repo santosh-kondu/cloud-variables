@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "file:../core"
     },
     "testFiles": [
         "test.ts"
