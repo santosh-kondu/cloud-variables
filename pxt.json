@@ -19,7 +19,7 @@
     "public": true,
     "yotta": {
         "dependencies": {
-            "rest-radio": "lancaster-university/rest-radio#master"
+            "rest-radio": "santosh-kondu/rest-radio#master"
         },
         "config": {
             "microbit-dal": {
